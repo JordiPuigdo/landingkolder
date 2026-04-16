@@ -1,7 +1,19 @@
+import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { SERVICES } from "@/lib/constants";
+
+const SERVICE_PHOTOS: Record<string, { src: string; alt: string }> = {
+  refrigeracion: {
+    src: "/photos/Fotos-Divina-Pastora-37.jpg",
+    alt: "Instal·lació de unitats de refrigeració industrial a Divina Pastora",
+  },
+  climatizacion: {
+    src: "/photos/Fotos-GymMontcada-20.jpg",
+    alt: "Sistema de climatització industrial instal·lat al Gym Montcada",
+  },
+};
 
 export function Services() {
   return (
@@ -44,6 +56,19 @@ export function Services() {
                   <h3 className="text-2xl font-bold text-[#0D1B2A]">{service.title}</h3>
                 </div>
               </div>
+
+              {/* Photo */}
+              {SERVICE_PHOTOS[service.id] && (
+                <div className="relative w-full h-48 rounded-xl overflow-hidden mb-6 -mx-0">
+                  <Image
+                    src={SERVICE_PHOTOS[service.id].src}
+                    alt={SERVICE_PHOTOS[service.id].alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              )}
 
               {/* Description */}
               <p className="text-[#6B7280] leading-relaxed mb-6">{service.description}</p>

@@ -203,6 +203,7 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                 muted
                 loop
                 playsInline
+                poster="/photos/Fotos-Divina-Pastora-08.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
                 suppressHydrationWarning
               />

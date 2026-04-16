@@ -1,4 +1,4 @@
-// TODO: Noè enviará el texto definitivo y las fotos por mail
+import Image from "next/image";
 
 const WHATSAPP_NUMBER = "34930000000"; // TODO: reemplazar con número real
 
@@ -64,18 +64,33 @@ export function AboutKolder() {
 
           {/* Right — fotos empresa */}
           <div className="grid grid-cols-2 gap-4">
-            {/* TODO: reemplazar placeholders con fotos reales (enviará Noè) */}
-            <div className="col-span-2 aspect-[16/9] rounded-2xl bg-[#E8F4FD] border-2 border-dashed border-[#00C2D4]/30 flex flex-col items-center justify-center gap-2">
-              <ImagePlaceholderIcon className="w-10 h-10 text-[#1E6FB0]/30" />
-              <p className="text-[#1E6FB0]/40 text-sm font-medium">Foto principal — pendiente de Noè</p>
+            <div className="col-span-2 relative aspect-[16/9] rounded-2xl overflow-hidden">
+              <Image
+                src="/photos/Fotos-Divina-Pastora-37.jpg"
+                alt="Unitats de refrigeració industrial instal·lades per Kölder"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
-            <div className="aspect-square rounded-2xl bg-[#E8F4FD] border-2 border-dashed border-[#00C2D4]/30 flex flex-col items-center justify-center gap-2">
-              <ImagePlaceholderIcon className="w-8 h-8 text-[#1E6FB0]/30" />
-              <p className="text-[#1E6FB0]/40 text-xs text-center px-2">Foto 2</p>
+            <div className="relative aspect-square rounded-2xl overflow-hidden">
+              <Image
+                src="/photos/Fotos-Divina-Pastora-08.jpg"
+                alt="Tècnic de Kölder instal·lant una unitat de refrigeració"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+              />
             </div>
-            <div className="aspect-square rounded-2xl bg-[#E8F4FD] border-2 border-dashed border-[#00C2D4]/30 flex flex-col items-center justify-center gap-2">
-              <ImagePlaceholderIcon className="w-8 h-8 text-[#1E6FB0]/30" />
-              <p className="text-[#1E6FB0]/40 text-xs text-center px-2">Foto 3</p>
+            <div className="relative aspect-square rounded-2xl overflow-hidden">
+              <Image
+                src="/photos/Fotos-GymMontcada-20.jpg"
+                alt="Sistema de climatització industrial al Gym Montcada"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+              />
             </div>
           </div>
 
@@ -95,12 +110,3 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function ImagePlaceholderIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-      <circle cx="8.5" cy="8.5" r="1.5" />
-      <polyline points="21 15 16 10 5 21" />
-    </svg>
-  );
-}
