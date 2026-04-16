@@ -1,7 +1,8 @@
+import React from "react";
 import { Badge } from "@/components/ui/Badge";
 import { DIFFERENTIATORS } from "@/lib/constants";
 
-const ICONS: Record<string, (p: { className?: string }) => JSX.Element> = {
+const ICONS: Record<string, (p: { className?: string }) => React.ReactElement> = {
   leaf: LeafIcon,
   zap: ZapIcon,
   award: AwardIcon,
