@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-const WHATSAPP_NUMBER = "34930000000"; // TODO: reemplazar con numero real
+const WHATSAPP_NUMBER = "34680321346";
 const TOTAL_STEPS = 4;
 
 type InstallationType = "refrigeracion" | "climatizacion";
@@ -35,9 +35,9 @@ const CONTACT_INITIAL_STATE: HeroContactState = {
 };
 
 const OPTION_LABELS: Record<string, string> = {
-  refrigeracion: "Refrigeracion",
-  climatizacion: "Climatizacion",
-  averia: "Averia",
+  refrigeracion: "Refrigeración",
+  climatizacion: "Climatización",
+  averia: "Avería",
   "obra-nueva-reforma": "Obra nueva / reforma",
   urgente: "Urgente",
   "no-urgente": "No urgente",
@@ -119,26 +119,23 @@ export function Hero() {
     setContact((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   }
 
-  function handleWhatsApp(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const detailLabel =
+    wizard.requestType === "averia"
+      ? OPTION_LABELS[wizard.urgency]
+      : OPTION_LABELS[wizard.equipmentCount];
 
-    const detailLabel =
-      wizard.requestType === "averia"
-        ? OPTION_LABELS[wizard.urgency]
-        : OPTION_LABELS[wizard.equipmentCount];
+  const whatsappText = encodeURIComponent(
+    `Hola, soy ${contact.name}.
 
-    const text = encodeURIComponent(
-      `Hola, soy ${contact.name}.
-
-Tipo de instalacion: ${OPTION_LABELS[wizard.installationType]}
+Tipo de instalación: ${OPTION_LABELS[wizard.installationType]}
 Tipo de solicitud: ${OPTION_LABELS[wizard.requestType]}
 Detalle: ${detailLabel}
 
-Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
-    );
+Mensaje: ${contact.message || "Quiero recibir más información."}`
+  );
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
-  }
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappText}`;
+  const canSend = contact.name.trim().length > 0;
 
   const summaryChips: string[] = [];
   if (wizard.installationType) summaryChips.push(OPTION_LABELS[wizard.installationType]);
@@ -153,7 +150,7 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
   return (
     <section
       className="relative min-h-screen flex items-center gradient-dark overflow-hidden"
-      aria-label="Presentacion principal"
+      aria-label="Presentación principal"
     >
       <div className="absolute inset-0 opacity-5" aria-hidden="true">
         <svg width="100%" height="100%">
@@ -181,18 +178,16 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           <div>
             <h1 className="animate-fade-up text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
-              Somos la
+              Solución 360 en
               <br />
-              solucion 360 en
-              <br />
-              <span className="text-gradient">refrigeracion y climatizacion</span>
+              <span className="text-gradient">refrigeración y climatización</span>
               <br />
               para tu empresa
             </h1>
 
             <p className="animate-fade-up delay-100 text-lg text-white/70 leading-relaxed mb-8 max-w-lg">
-              Mas de 20 anos ayudando a negocios industriales y comerciales con
-              soluciones fiables y servicio tecnico 24/7.
+               Instalamos y mantenemos sistemas de refrigeración y climatización con refrigerantes naturales — 
+               la solución más eficiente, económica y a prueba de la normativa F-Gas de la UE.
             </p>
 
             <div className="animate-fade-up delay-200 relative rounded-2xl overflow-hidden bg-[#1B3A5C] border border-white/10 aspect-video group">
@@ -225,13 +220,13 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
           </div>
 
           <div className="animate-fade-up delay-200">
-            <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 space-y-5">
+            <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 space-y-5 min-h-[480px] flex flex-col">
               <div className="space-y-1">
                 <p className="text-[#00C2D4] text-sm font-semibold uppercase tracking-wider">
-                  Contacto rapido
+                  Contacto rápido
                 </p>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">
-                  Cuentanos tu caso
+                  Cuéntanos tu caso
                   <br />
                   <span className="text-gradient">y te escribimos por WhatsApp</span>
                 </h2>
@@ -252,12 +247,13 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                 </div>
               </div>
 
+              <div className="flex-1">
               {step === 1 && (
                 <HeroQuestion
-                  question="Tipo de instalacion"
+                  question="Tipo de instalación"
                   options={[
-                    { value: "refrigeracion", label: "Refrigeracion" },
-                    { value: "climatizacion", label: "Climatizacion" },
+                    { value: "refrigeracion", label: "Refrigeración" },
+                    { value: "climatizacion", label: "Climatización" },
                   ]}
                   onSelect={(value) => selectInstallationType(value as InstallationType)}
                   selected={wizard.installationType}
@@ -266,9 +262,9 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
 
               {step === 2 && (
                 <HeroQuestion
-                  question="Averia o obra nueva / reforma"
+                  question="Avería u obra nueva / reforma"
                   options={[
-                    { value: "averia", label: "Averia" },
+                    { value: "averia", label: "Avería" },
                     { value: "obra-nueva-reforma", label: "Obra nueva / reforma" },
                   ]}
                   onSelect={(value) => selectRequestType(value as RequestType)}
@@ -278,7 +274,7 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
 
               {step === 3 && wizard.requestType === "averia" && (
                 <HeroQuestion
-                  question="Es urgente"
+                  question="¿Es urgente?"
                   options={[
                     { value: "urgente", label: "Urgente" },
                     { value: "no-urgente", label: "No urgente" },
@@ -290,7 +286,7 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
 
               {step === 3 && wizard.requestType === "obra-nueva-reforma" && (
                 <HeroQuestion
-                  question="Numero de equipos"
+                  question="Número de equipos"
                   options={[
                     { value: "1-3", label: "1-3" },
                     { value: "3-10", label: "3-10" },
@@ -302,8 +298,10 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                 />
               )}
 
+              </div>
+
               {step === 4 && (
-                <form onSubmit={handleWhatsApp} className="space-y-4">
+                <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {summaryChips.map((chip) => (
                       <span
@@ -326,10 +324,9 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                       id="hero-name"
                       name="name"
                       type="text"
-                      required
                       value={contact.name}
                       onChange={handleContactChange}
-                      placeholder="Juan Garcia"
+                      placeholder="Juan García"
                       className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-[#00C2D4] focus:border-transparent transition"
                       suppressHydrationWarning
                     />
@@ -354,14 +351,27 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-base py-4 px-6 rounded-xl transition-colors animate-pulse-ice"
-                  >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    Enviar por WhatsApp
-                  </button>
-                </form>
+                  {canSend ? (
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-bold text-base py-4 px-6 rounded-xl transition-colors animate-pulse-ice"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                      Enviar por WhatsApp
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="w-full flex items-center justify-center gap-3 bg-[#25D366]/40 text-white/50 font-bold text-base py-4 px-6 rounded-xl cursor-not-allowed"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                      Enviar por WhatsApp
+                    </button>
+                  )}
+                </div>
               )}
 
               {step > 1 && (
@@ -371,12 +381,12 @@ Mensaje: ${contact.message || "Quiero recibir mas informacion."}`
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center gap-1"
                 >
                   <ChevronLeftIcon className="w-4 h-4" />
-                  Volver atras
+                  Volver atrás
                 </button>
               )}
 
               <p className="text-center text-xs text-white/30">
-                Te responderemos en menos de 24h
+                Te responderemos en menos de 24 h
               </p>
             </div>
           </div>

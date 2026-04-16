@@ -1,7 +1,7 @@
 "use client";
 
-const WHATSAPP_NUMBER = "34930000000"; // TODO: reemplazar con número real
-const WHATSAPP_MESSAGE = "Hola! M'agradaria demanar un pressupost.";
+const WHATSAPP_NUMBER = "34680321346";
+const WHATSAPP_MESSAGE = "Hola. Me gustaría pedir un presupuesto.";
 
 export function WhatsAppFloat() {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -11,7 +11,7 @@ export function WhatsAppFloat() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contacta'ns per WhatsApp"
+      aria-label="Contacta con nosotros por WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] shadow-lg hover:bg-[#1ebe5d] hover:scale-110 transition-all duration-200"
     >
       <WhatsAppIcon className="w-7 h-7 text-white" />

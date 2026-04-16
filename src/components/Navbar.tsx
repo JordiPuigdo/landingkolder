@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { NAV_LINKS, COMPANY } from "@/lib/constants";
+
+const WHATSAPP_HREF = `https://wa.me/34680321346?text=${encodeURIComponent("Hola, me gustaría recibir más información sobre Kölder.")}`;
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -65,7 +67,7 @@ export function Navbar() {
             <PhoneIcon className="w-4 h-4" />
             {COMPANY.phone}
           </a>
-          <Button href="#" variant="ice" size="sm">
+          <Button href={WHATSAPP_HREF} variant="ice" size="sm" target="_blank" rel="noopener noreferrer">
             WhatsApp
           </Button>
         </div>
@@ -97,7 +99,7 @@ export function Navbar() {
               </li>
             ))}
             <li className="pt-3">
-              <Button href="#" variant="ice" size="md" className="w-full" onClick={() => setMenuOpen(false)}>
+              <Button href={WHATSAPP_HREF} variant="ice" size="md" className="w-full" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
                 WhatsApp
               </Button>
             </li>

@@ -53,14 +53,14 @@ export const DIFFERENTIATORS: Differentiator[] = [
     id: "natural",
     title: "Refrigerantes Naturales",
     description:
-      "Trabajamos exclusivamente con NH₃, CO₂ e hidrocarburos. Zero GWP, cumplimiento total del Reglamento F-Gas y futuro a prueba de normativas.",
+      "Trabajamos exclusivamente con NH₃, CO₂ e hidrocarburos. Cero GWP, cumplimiento total del Reglamento F-Gas y futuro a prueba de normativas.",
     icon: "leaf",
   },
   {
     id: "eficiencia",
     title: "Eficiencia Energética",
     description:
-      "Nuestros sistemas reducen el consumo eléctrico entre un 20-40% comparado con instalaciones convencionales. ROI en menos de 3 años.",
+      "Nuestros sistemas reducen el consumo eléctrico entre un 20-40% en comparación con instalaciones convencionales. ROI en menos de 3 años.",
     icon: "zap",
   },
   {
@@ -74,14 +74,14 @@ export const DIFFERENTIATORS: Differentiator[] = [
     id: "servicio",
     title: "Servicio Integral",
     description:
-      "De estudio y diseño a puesta en marcha y mantenimiento. Un solo punto de contacto para toda la vida útil de la instalación.",
+      "Desde el estudio y diseño hasta la puesta en marcha y el mantenimiento. Un solo punto de contacto para toda la vida útil de la instalación.",
     icon: "shield",
   },
   {
     id: "local",
     title: "Proximidad Local",
     description:
-      "Empresa catalana con profundo conocimiento del mercado local y respuesta rápida. Soporte técnico en 24h para clientes con contrato de mantenimiento.",
+      "Empresa catalana con profundo conocimiento del mercado local y respuesta rápida. Soporte técnico en 24 h para clientes con contrato de mantenimiento.",
     icon: "map-pin",
   },
   {
@@ -100,7 +100,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     step: 1,
     title: "Estudio y Presupuesto",
     description:
-      "Visita técnica gratuita para analizar tus necesidades. Recibirás un presupuesto detallado y sin compromiso en 48h.",
+      "Visita técnica gratuita para analizar tus necesidades. Recibirás un presupuesto detallado y sin compromiso en 48 h.",
   },
   {
     step: 2,
@@ -151,14 +151,14 @@ export const STATS = [
   { value: "200+", label: "Instalaciones realizadas" },
   { value: "20+", label: "Años de experiencia" },
   { value: "98%", label: "Clientes satisfechos" },
-  { value: "24h", label: "Respuesta técnica garantizada" },
+  { value: "24 h", label: "Respuesta técnica garantizada" },
 ];
 
 /* ─── Trust badges ──────────────────────────────────────────────────────── */
 
 export const TRUST_BADGES = [
   "Certificación F-Gas",
-  "RSIF Homologado",
+  "RSIF homologado",
   "ISO 9001",
   "Empresa Instaladora Autorizada",
   "Eficiencia Energética A+",
@@ -170,7 +170,7 @@ export const COMPANY = {
   name: "Kölder Climatización Eficiente",
   shortName: "Kölder",
   email: "info@kolder.cat",
-  phone: "+34 93 000 00 00",
+  phone: "+34 938 81 33 93",
   address: "Cataluña, España",
   linkedin: "https://www.linkedin.com/company/kolder",
   instagram: "https://www.instagram.com/kolder.cat",

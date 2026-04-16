@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const WHATSAPP_NUMBER = "34930000000"; // TODO: reemplazar con número real
+const WHATSAPP_NUMBER = "34680321346";
 
 export function AboutKolder() {
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -26,7 +26,7 @@ export function AboutKolder() {
               id="about-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0D1B2A] leading-tight tracking-tight"
             >
-              El partner que te<br />
+              El socio que te<br />
               <span className="text-gradient">acompaña de 0 a 100</span>
             </h2>
 
@@ -46,7 +46,7 @@ export function AboutKolder() {
               </p>
               <p className="font-semibold text-[#0D1B2A]">
                 Porque Kölder no es solo una empresa frigorista,
-                es el partner que te acompaña de 0 a 100.
+                es el socio que te acompaña de 0 a 100.
               </p>
             </div>
 
@@ -67,7 +67,7 @@ export function AboutKolder() {
             <div className="col-span-2 relative aspect-[16/9] rounded-2xl overflow-hidden">
               <Image
                 src="/photos/Fotos-Divina-Pastora-37.jpg"
-                alt="Unitats de refrigeració industrial instal·lades per Kölder"
+                alt="Unidades de refrigeración industrial instaladas por Kölder"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -77,7 +77,7 @@ export function AboutKolder() {
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <Image
                 src="/photos/Fotos-Divina-Pastora-08.jpg"
-                alt="Tècnic de Kölder instal·lant una unitat de refrigeració"
+                alt="Técnico de Kölder instalando una unidad de refrigeración"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 50vw, 25vw"
@@ -86,7 +86,7 @@ export function AboutKolder() {
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <Image
                 src="/photos/Fotos-GymMontcada-20.jpg"
-                alt="Sistema de climatització industrial al Gym Montcada"
+                alt="Sistema de climatización industrial en el Gym Montcada"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 50vw, 25vw"
@@ -109,4 +109,3 @@ function WhatsAppIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-
