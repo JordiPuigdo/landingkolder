@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ─── Kölder Design System ──────────────────────────────────────────────── */
+
+@theme {
+  /* Brand palette */
+  --color-kolder-dark:    #0D1B2A;
+  --color-kolder-navy:    #1B3A5C;
+  --color-kolder-blue:    #1E6FB0;
+  --color-kolder-ice:     #00C2D4;
+  --color-kolder-frost:   #E8F4FD;
+  --color-kolder-success: #10B981;
+  --color-kolder-gray:    #6B7280;
+  --color-kolder-white:   #FFFFFF;
+
+  /* Typography */
+  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px 0 rgba(13, 27, 42, 0.10);
+  --shadow-card-hover: 0 8px 40px 0 rgba(13, 27, 42, 0.18);
+}
+
+/* ─── Base styles ───────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-kolder-white);
+  color: var(--color-kolder-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Utility classes ───────────────────────────────────────────────────── */
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.container-narrow {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ─── Gradient helpers ──────────────────────────────────────────────────── */
+
+.gradient-dark {
+  background: linear-gradient(135deg, var(--color-kolder-dark) 0%, var(--color-kolder-navy) 100%);
+}
+
+.gradient-ice {
+  background: linear-gradient(135deg, var(--color-kolder-blue) 0%, var(--color-kolder-ice) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-kolder-blue), var(--color-kolder-ice));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Animation ─────────────────────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-ice {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 194, 212, 0.4); }
+  50%       { box-shadow: 0 0 0 12px rgba(0, 194, 212, 0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-pulse-ice {
+  animation: pulse-ice 2s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ─── Focus ring ────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-kolder-ice);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

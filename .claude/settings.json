@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kolder.cat)",
+      "Bash(dir \"c:\\\\KOLDER\\\\LANDING\")",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(taskkill /PID 60000 /F)",
+      "Bash(cmd /c \"taskkill /PID 60000 /F\")",
+      "Bash(cmd /c \"netstat -ano | findstr :3000\")",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
