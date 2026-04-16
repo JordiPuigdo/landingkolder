@@ -100,7 +100,7 @@ export function Navbar() {
             ))}
             <li className="pt-3">
               <Button href={WHATSAPP_HREF} variant="ice" size="md" className="w-full" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
-                WhatsApp
+                Contacto
               </Button>
             </li>
           </ul>
