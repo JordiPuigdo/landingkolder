@@ -172,8 +172,8 @@ export const COMPANY = {
   email: "info@kolder.cat",
   phone: "+34 938 81 33 93",
   address: "Cataluña, España",
-  linkedin: "https://www.linkedin.com/company/kolder",
-  instagram: "https://www.instagram.com/kolder.cat",
+  linkedin: "https://www.linkedin.com/company/kölder",
+  instagram: "https://www.instagram.com/kolder_refrigeracio",
   privacyUrl: "/politica-de-privacidad",
 };
 
