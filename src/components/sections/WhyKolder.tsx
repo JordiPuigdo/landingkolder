@@ -26,12 +26,12 @@ export function WhyKolder() {
             id="why-heading"
             className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4"
           >
-            El Partner que tu
+            El socio que tu
             <br />
-            <span className="text-gradient">Empresa Necesita</span>
+            <span className="text-gradient">empresa necesita</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            No somos un instalador más. Somos el partner tecnológico que optimiza tu infraestructura
+            No somos un instalador más. Somos el socio tecnológico que optimiza tu infraestructura
             frigorífica para reducir costes y garantizar el cumplimiento normativo.
           </p>
         </div>

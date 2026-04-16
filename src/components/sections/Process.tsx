@@ -61,7 +61,7 @@ export function Process() {
         {/* CTA */}
         <div className="mt-14 text-center">
           <Button href="#contacto" variant="primary" size="lg">
-            Empieza ahora — Presupuesto en 48h
+            Empieza ahora — Presupuesto en 48 h
             <ClockIcon className="w-5 h-5" />
           </Button>
         </div>

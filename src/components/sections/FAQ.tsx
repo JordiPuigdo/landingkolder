@@ -6,7 +6,7 @@ const FAQS = [
   {
     question: "¿Qué son los refrigerantes naturales y por qué son mejores?",
     answer:
-      "Los refrigerantes naturales (NH₃ amoníaco, CO₂ y hidrocarburos) tienen un potencial de calentamiento global (GWP) prácticamente nulo frente a los gases fluorados HFCs tradicionales. Además de ser mucho más respetuosos con el medio ambiente, ofrecen mayor eficiencia energética y están libres de las restricciones del Reglamento F-Gas 2024, lo que garantiza el futuro de tu instalación sin riesgo de prohibiciones ni encarecimientos de refrigerante.",
+      "Los refrigerantes naturales (NH₃ amoníaco, CO₂ y A₃ propano) tienen un potencial de calentamiento global (GWP) prácticamente nulo frente a los gases fluorados HFCs tradicionales. Además de ser mucho más respetuosos con el medio ambiente, ofrecen mayor eficiencia energética y están libres de las restricciones del Reglamento F-Gas 2024, lo que garantiza el futuro de tu instalación sin riesgo de prohibiciones ni encarecimientos de refrigerante.",
   },
   {
     question: "¿Qué es el Reglamento F-Gas y cómo me afecta?",

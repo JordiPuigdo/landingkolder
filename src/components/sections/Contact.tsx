@@ -40,9 +40,9 @@ const CONTACT_INIT: ContactData = {
 };
 
 const OPTION_LABELS: Record<string, string> = {
-  refrigeracion: "Refrigeracion",
-  climatizacion: "Climatizacion",
-  averia: "Averia",
+  refrigeracion: "Refrigeración",
+  climatizacion: "Climatización",
+  averia: "Avería",
   "obra-nueva-reforma": "Obra nueva / reforma",
   urgente: "Urgente",
   "no-urgente": "No urgente",
@@ -134,12 +134,12 @@ export function Contact() {
 
       setFormState({
         status: "success",
-        message: "Solicitud enviada. Te contactaremos en menos de 48h.",
+        message: "Solicitud enviada. Te contactaremos en menos de 48 h.",
       });
     } catch {
       setFormState({
         status: "error",
-        message: "No se pudo enviar. Vuelve a intentarlo o llamanos directamente.",
+        message: "No se pudo enviar. Vuelve a intentarlo o llámanos directamente.",
       });
     }
   }
@@ -194,12 +194,12 @@ export function Contact() {
                 id="contact-heading"
                 className="text-3xl md:text-4xl font-extrabold text-[#0D1B2A] tracking-tight mb-4"
               >
-                Cuentanos tu caso
+                Cuéntanos tu caso
                 <br />
                 <span className="text-gradient">en menos de 1 minuto</span>
               </h2>
               <p className="text-[#6B7280] leading-relaxed">
-                Sigue este cuestionario y te contactaremos con la solucion adecuada.
+                Sigue este cuestionario y te contactaremos con la solución adecuada.
               </p>
             </div>
 
@@ -207,7 +207,7 @@ export function Contact() {
               <li>
                 <ContactItem
                   icon={<PhoneIcon className="w-5 h-5 text-[#00C2D4]" />}
-                  label="Telefono"
+                  label="Teléfono"
                   value={COMPANY.phone}
                   href={`tel:${COMPANY.phone}`}
                 />
@@ -232,7 +232,7 @@ export function Contact() {
             <div className="p-5 rounded-2xl bg-[#10B981]/10 border border-[#10B981]/20">
               <p className="text-sm text-[#065F46] font-medium flex items-start gap-2">
                 <ShieldCheckIcon className="w-5 h-5 shrink-0 mt-0.5 text-[#10B981]" />
-                Tus datos estan protegidos y solo los usaremos para responderte.
+                Tus datos están protegidos y solo los usaremos para responderte.
               </p>
             </div>
           </div>
@@ -284,18 +284,18 @@ export function Contact() {
 
                 {step === 1 && (
                   <StepQuestion
-                    question="Tipo de instalacion"
+                    question="Tipo de instalación"
                     options={[
                       {
                         value: "refrigeracion",
-                        label: "Refrigeracion",
-                        desc: "Camaras, vitrinas, frio industrial o comercial",
+                        label: "Refrigeración",
+                        desc: "Cámaras, vitrinas, frío industrial o comercial",
                         icon: <SnowflakeIcon className="w-7 h-7" />,
                       },
                       {
                         value: "climatizacion",
-                        label: "Climatizacion",
-                        desc: "Clima de espacios, VRF/VRV y splits",
+                        label: "Climatización",
+                        desc: "Climatización de espacios, VRF/VRV y splits",
                         icon: <WindIcon className="w-7 h-7" />,
                       },
                     ]}
@@ -306,12 +306,12 @@ export function Contact() {
 
                 {step === 2 && (
                   <StepQuestion
-                    question="Averia o obra nueva / reforma"
+                    question="Avería u obra nueva / reforma"
                     options={[
                       {
                         value: "averia",
-                        label: "Averia",
-                        desc: "Necesito reparacion de una instalacion existente",
+                        label: "Avería",
+                        desc: "Necesito reparación de una instalación existente",
                         icon: <WrenchIcon className="w-7 h-7" />,
                       },
                       {
@@ -328,7 +328,7 @@ export function Contact() {
 
                 {step === 3 && wizard.requestType === "averia" && (
                   <StepQuestion
-                    question="Es urgente"
+                    question="¿Es urgente?"
                     options={[
                       {
                         value: "urgente",
@@ -350,24 +350,24 @@ export function Contact() {
 
                 {step === 3 && wizard.requestType === "obra-nueva-reforma" && (
                   <StepQuestion
-                    question="Numero de equipos"
+                    question="Número de equipos"
                     options={[
                       {
                         value: "1-3",
                         label: "1-3",
-                        desc: "Instalacion pequena",
+                        desc: "Instalación pequeña",
                         icon: <EquipSmallIcon className="w-7 h-7" />,
                       },
                       {
                         value: "3-10",
                         label: "3-10",
-                        desc: "Instalacion media",
+                        desc: "Instalación media",
                         icon: <EquipMedIcon className="w-7 h-7" />,
                       },
                       {
                         value: "+10",
                         label: "+10",
-                        desc: "Instalacion grande",
+                        desc: "Instalación grande",
                         icon: <EquipLargeIcon className="w-7 h-7" />,
                       },
                     ]}
@@ -405,7 +405,7 @@ export function Contact() {
                     />
 
                     <Field
-                      label="Telefono *"
+                      label="Teléfono *"
                       name="phone"
                       type="tel"
                       value={contact.phone}
@@ -424,7 +424,7 @@ export function Contact() {
                         value={contact.message}
                         onChange={handleContactChange}
                         rows={3}
-                        placeholder="Ejemplo: necesito visita tecnica para esta semana"
+                        placeholder="Ejemplo: necesito visita técnica para esta semana"
                         className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] bg-white text-[#0D1B2A] text-sm focus:outline-none focus:ring-2 focus:ring-[#00C2D4] focus:border-transparent transition resize-none"
                       />
                     </div>
@@ -464,7 +464,7 @@ export function Contact() {
                     className="mt-6 text-sm text-[#6B7280] hover:text-[#1E6FB0] transition-colors flex items-center gap-1.5"
                   >
                     <ChevronLeftIcon className="w-4 h-4" />
-                    Volver atras
+                    Volver atrás
                   </button>
                 )}
               </div>

@@ -53,7 +53,7 @@ export const DIFFERENTIATORS: Differentiator[] = [
     id: "natural",
     title: "Refrigerantes Naturales",
     description:
-      "Trabajamos exclusivamente con NH₃, CO₂ e hidrocarburos. Cero GWP, cumplimiento total del Reglamento F-Gas y futuro a prueba de normativas.",
+      "Trabajamos exclusivamente con NH₃, CO₂ e A₃ propano. Cero GWP, cumplimiento total del Reglamento F-Gas y futuro a prueba de normativas.",
     icon: "leaf",
   },
   {

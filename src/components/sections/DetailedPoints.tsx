@@ -13,7 +13,7 @@ const POINTS = [
   },
   {
     number: "03",
-    title: "Servicio técnico de averías 24h, 365 días al año",
+    title: "Servicio técnico de averías 24 h, 365 días al año",
     description:
       "Tenemos una plantilla propia de técnicos formados y cualificados que siempre tiene en cuenta al cliente. Nuestros vehículos taller están equipados con todo tipo de repuestos para poder resolver el 90% de averías en el momento. Asistencia garantizada en menos de 3 horas.",
   },

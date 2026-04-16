@@ -9,7 +9,7 @@ export function Footer() {
         <div className="md:col-span-1 space-y-4">
           <Image
             src="/logo.png"
-            alt="Kölder Climatització Eficient"
+            alt="Kölder Climatización Eficiente"
             width={80}
             height={28}
             className="h-7 w-auto"
@@ -171,3 +171,4 @@ function MapPinIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+

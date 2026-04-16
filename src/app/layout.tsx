@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Kölder — Refrigeración y Climatización Eficiente en Cataluña",
   description:
-    "Instalación y mantenimiento de sistemas de refrigeración industrial y comercial, y climatización de espacios. Especialistas en refrigerantes naturales y eficiencia energética. Presupuesto gratuito en 48h.",
+    "Instalación y mantenimiento de sistemas de refrigeración industrial y comercial, y climatización de espacios. Especialistas en refrigerantes naturales y eficiencia energética. Presupuesto gratuito en 48 h.",
   keywords: [
     "refrigeración industrial Cataluña",
     "climatización eficiente",

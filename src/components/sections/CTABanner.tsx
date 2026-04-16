@@ -22,7 +22,7 @@ export function CTABanner() {
       <div className="container-narrow relative z-10 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 text-white text-xs font-semibold uppercase tracking-wider mb-6">
           <ClockIcon className="w-3.5 h-3.5" />
-          Respuesta garantizada en 48h
+          Respuesta garantizada en 48 h
         </div>
 
         <h2

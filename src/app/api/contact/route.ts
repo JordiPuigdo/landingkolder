@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
   for (const field of REQUIRED_FIELDS) {
     if (!data[field] || typeof data[field] !== "string" || !data[field]!.trim()) {
       return NextResponse.json(
-        { error: `El camp "${field}" és obligatori` },
+        { error: `El campo "${field}" es obligatorio` },
         { status: 422 }
       );
     }
@@ -40,12 +40,12 @@ export async function POST(request: NextRequest) {
   // Validate email format only if provided
   if (data.email && data.email.trim() && !isValidEmail(data.email)) {
     return NextResponse.json(
-      { error: "El format de l'email no és vàlid" },
+      { error: "El formato del correo electrónico no es válido" },
       { status: 422 }
     );
   }
 
-  // Sanitize — only allow expected fields
+  // Sanitize - only allow expected fields
   const sanitized: ContactFormData = {
     name:            String(data.name            ?? "").slice(0, 100),
     email:           String(data.email           ?? "").slice(0, 200),
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
   });
 
   return NextResponse.json(
-    { success: true, message: "Missatge rebut correctament" },
+    { success: true, message: "Mensaje recibido correctamente" },
     { status: 200 }
   );
 }
