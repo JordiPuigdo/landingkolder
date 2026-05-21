@@ -60,15 +60,9 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href={`tel:${COMPANY.phone}`}
-            className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
-          >
+          <Button href={`tel:${COMPANY.phone}`} variant="ice" size="sm">
             <PhoneIcon className="w-4 h-4" />
             {COMPANY.phone}
-          </a>
-          <Button href={WHATSAPP_HREF} variant="ice" size="sm" target="_blank" rel="noopener noreferrer">
-            WhatsApp
           </Button>
         </div>
 
