@@ -1,6 +1,7 @@
+import { COMPANY } from "@/lib/constants";
 import Image from "next/image";
 
-const PHONE_NUMBER = "680321346";
+const PHONE_NUMBER = COMPANY.phone;
 
 export function AboutKolder() {
 
