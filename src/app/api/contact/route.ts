@@ -31,12 +31,17 @@ function isValidEmail(email: string): boolean {
 const ALLOWED_ORIGINS = [
   "https://kolder.cat",
   "https://www.kolder.cat",
+  "https://landingkolder.vercel.app",
+  "https://kolderrefrigeracion.kolder.cat",
   ...(process.env.NODE_ENV === "development" ? ["http://localhost:3000"] : []),
 ];
+
+console.log("[contact] RESEND_API_KEY present:", !!process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   // Origin check
   const origin = request.headers.get("origin") ?? "";
+  console.log("[contact] origin received:", origin);
   if (!ALLOWED_ORIGINS.includes(origin)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
